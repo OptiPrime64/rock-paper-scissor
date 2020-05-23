@@ -1,0 +1,40 @@
+        game();
+
+        function computerPlay() {
+            let compChoice = Math.floor(Math.random() * 3);
+            return (compChoice === 1) ? `rock`
+                : (compChoice === 2) ? `paper`
+                    : `scissors`;
+        }
+
+        function playRound(playSel, compSel) {
+            playSel = playSel.toLowerCase();
+            return ((playSel === `rock` && compSel === `paper`) || (playSel === `paper` && compSel === `scissors`) || (playSel === `scissors` && compSel === `rock`)) ? `You lose!`
+                : ((playSel === `rock` && compSel === `scissors`) || (playSel === `paper` && compSel === `rock`) || (playSel === `scissors` && compSel === `paper`)) ? `You win!`
+                    : `Tie!`;
+
+        }
+
+        function game() {
+            let playScore = 0;
+            let compScore = 0;
+            let playSel, compSel, winner, score;
+
+         for(let i = 0; i < 5; i++){
+            playSel = prompt(`Rock, Paper, or Scissors?`);
+            compSel = computerPlay();
+            winner = playRound(playSel, compSel);
+            console.log(winner);
+            if (winner === `You lose!`) {
+                ++compScore;
+            } else if (winner === `You win!`) {
+                ++playScore;
+            }
+            score = `Score: ${playScore}, ${compScore}`;
+            console.log(score);
+
+         }
+  console.log(`GAME OVER`);
+        }
+
+      
