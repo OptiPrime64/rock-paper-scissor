@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissor</title>
+</head>
+
+<body>
+
+
+    <script>
+
+        function computerPlay() {
+            let compChoice = Math.floor(Math.random() * 3);
+            return (compChoice === 1) ? `rock`
+                : (compChoice === 2) ? `paper`
+                    : `scissors`;
+        }
+
+        function playRound(playSel, compSel) {
+            playSel = playSel.toLowerCase();
+            return ((playSel === `rock` && compSel === `paper`) || (playSel === `paper` && compSel === `scissors`) || (playSel === `scissors` && compSel === `rock`)) ? `You lose!`
+                : ((playSel === `rock` && compSel === `scissors`) || (playSel === `paper` && compSel === `rock`) || (playSel === `scissors` && compSel === `paper`)) ? `You win!`
+                    : `Tie!`;
+
+        }
+
+        function game() {
+            let playScore = 0;
+            let compScore = 0;
+            let playSel = prompt(`Rock, Paper, or Scissors?`);
+            let compSel = computerPlay();
+            let winner = playRound(playSel, compSel);
+            console.log(winner);
+            if (winner === `You lose!`) {
+                ++compScore;
+            } else if (winner === `You win!`) {
+                ++playScore;
+            }
+            let score = `Score: ${playScore}, ${compScore}`;
+            console.log(score);
+
+            playSel = prompt(`Rock, Paper, or Scissors?`);
+            compSel = computerPlay();
+            winner = playRound(playSel, compSel);
+            console.log(winner);
+            if (winner === `You lose!`) {
+                ++compScore;
+            } else if (winner === `You win!`) {
+                ++playScore;
+            }
+            score = `Score: ${playScore}, ${compScore}`;
+            console.log(score);
+
+            playSel = prompt(`Rock, Paper, or Scissors?`);
+            compSel = computerPlay();
+            winner = playRound(playSel, compSel);
+            console.log(winner);
+            if (winner === `You lose!`) {
+                ++compScore;
+            } else if (winner === `You win!`) {
+                ++playScore;
+            }
+            score = `Score: ${playScore}, ${compScore}`;
+            console.log(score);
+
+            playSel = prompt(`Rock, Paper, or Scissors?`);
+            compSel = computerPlay();
+            winner = playRound(playSel, compSel);
+            console.log(winner);
+            if (winner === `You lose!`) {
+                ++compScore;
+            } else if (winner === `You win!`) {
+                ++playScore;
+            }
+            score = `Score: ${playScore}, ${compScore}`;
+            console.log(score);
+
+            playSel = prompt(`Rock, Paper, or Scissors?`);
+            compSel = computerPlay();
+            winner = playRound(playSel, compSel);
+            console.log(winner);
+            if (winner === `You lose!`) {
+                ++compScore;
+            } else if (winner === `You win!`) {
+                ++playScore;
+            }
+            score = `Final score: ${playScore}, ${compScore}`;
+            console.log(score);
+        }
+
+    </script>
+
+</body>
+
+</html>

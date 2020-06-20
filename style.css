@@ -1,0 +1,19 @@
+body{
+
+text-align: center;
+
+}
+
+
+.player1, .computer{
+    font-weight: bolder;
+}
+
+.rounds {
+    color: grey;
+    font-size: 12px;
+}
+
+.tie-game {
+    font-size: smaller;
+}
